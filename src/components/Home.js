@@ -14,8 +14,14 @@ export default class Home extends React.Component {
       super(props);
       this.state = {
          fruits: fruits,
+         fruitOrder: "A-Z",
       };
       // console.log(props);
+   }
+
+   setFruitOrder(e) {
+      console.log(e.target.value);
+      this.setState({ fruitOrder: e.target.value });
    }
 
    render() {
@@ -27,14 +33,15 @@ export default class Home extends React.Component {
                      <input
                         className="form-check-input"
                         type="radio"
-                        name="inlineRadioOptions"
-                        id="alphabeticalAsc"
+                        name="fruit-order"
+                        id="a-z"
                         value="A-Z"
+                        checked={this.state.fruitOrder === "A-Z"}
+                        onChange={(e) => {
+                           this.setFruitOrder(e);
+                        }}
                      />
-                     <label
-                        className="form-check-label"
-                        htmlFor="alphabeticalAsc"
-                     >
+                     <label className="form-check-label" htmlFor="A-Z">
                         A-Z
                      </label>
                   </div>
@@ -42,14 +49,15 @@ export default class Home extends React.Component {
                      <input
                         className="form-check-input"
                         type="radio"
-                        name="inlineRadioOptions"
-                        id="alphabeticalDesc"
+                        name="fruit-order"
+                        id="z-a"
                         value="Z-A"
+                        checked={this.state.fruitOrder === "Z-A"}
+                        onChange={(e) => {
+                           this.setFruitOrder(e);
+                        }}
                      />
-                     <label
-                        className="form-check-label"
-                        htmlFor="alphabeticalDesc"
-                     >
+                     <label className="form-check-label" htmlFor="z-a">
                         Z-A
                      </label>
                   </div>
