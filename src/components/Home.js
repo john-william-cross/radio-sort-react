@@ -2,6 +2,7 @@ import React from "react";
 import "../style/master.scss";
 import Fruit from "../components/Fruit";
 import "../style/master.scss";
+// importing from data folder
 import { fruits } from "../data/fruits";
 
 console.log("Here's the list of fruits: ", fruits);

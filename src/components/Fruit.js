@@ -1,9 +1,13 @@
 import React from "react";
+import { addExclamationPoint } from "../utils/helpers";
 
-function Fruit(props) {
+export default function Fruit(props) {
    console.log("The props we passed from the parent component: ", props);
-   return <h1>{props.fruit.name}</h1>;
+   return (
+      <h1>
+         {props.fruit.name}
+         {/* example of adding a function */}
+         {addExclamationPoint()}
+      </h1>
+   );
 }
-
-export default Fruit;
-//test comment
