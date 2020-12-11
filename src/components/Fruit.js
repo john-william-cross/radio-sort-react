@@ -1,14 +1,8 @@
 import React from "react";
 
 function Fruit(props) {
-   console.log(props);
-   return (
-      <div>
-         <h4 className="text-primary">
-            {props.fruit.name} ({props.fruit.rating})
-         </h4>
-      </div>
-   );
+   console.log("The props we passed from the parent component: ", props);
+   return <h1>{props.fruit.name}</h1>;
 }
 
 export default Fruit;
