@@ -40,7 +40,7 @@ export default function Home() {
                   </label>
                </div>
                {fruits.map((fruit) => {
-                  return <Fruit fruit={fruit} key={fruit.id} />;
+                  return <Fruit fruit={fruit} key={fruit.id} />; // fruit is being passed as props of the Fruit component. Passing fruit like this {fruit} passes all properties of a fruit object
                })}
             </div>
          </div>
