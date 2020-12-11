@@ -4,8 +4,8 @@ import format from "date-fns/format";
 
 export default class Fruit extends React.Component {
    // constructor method always fires first
-   constructor() {
-      super(); // super allows access to this, which gives us access to the entire component
+   constructor(props) {
+      super(props); // super allows access to this, which gives us access to the entire component
       // this.state = {
       //    isHoveredOver: false,
       // }; // the state of this individual project component

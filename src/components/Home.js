@@ -10,9 +10,12 @@ console.log("Here's the list of fruits: ", fruits);
 // to add local state to a functional component, change it to a class
 
 export default class Home extends React.Component {
-   constructor() {
-      super();
-      this.state = {};
+   constructor(props) {
+      super(props);
+      this.state = {
+         fruits: fruits,
+      };
+      // console.log(props);
    }
 
    render() {
@@ -51,7 +54,7 @@ export default class Home extends React.Component {
                      </label>
                   </div>
 
-                  {fruits.map((fruit) => {
+                  {this.state.fruits.map((fruit) => {
                      return <Fruit fruit={fruit} key={fruit.id} />; // fruit is being passed as props of the Fruit component. Passing fruit like this {fruit} passes all properties of a fruit object
                   })}
                </div>
