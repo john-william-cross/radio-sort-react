@@ -4,6 +4,7 @@ import Fruit from "../components/Fruit";
 import "../style/master.scss";
 // importing from data folder
 import { fruits } from "../data/fruits";
+import orderBy from "lodash/orderBy";
 
 console.log("Here's the list of fruits: ", fruits);
 
@@ -20,8 +21,15 @@ export default class Home extends React.Component {
    }
 
    setFruitOrder(e) {
-      console.log(e.target.value);
-      this.setState({ fruitOrder: e.target.value });
+      const fruitOrder = e.target.value;
+      // console.log(e.target.value);
+      this.setState((fruitOrder) => {
+         return {
+            fruitOrder: fruitOrder,
+            // fruits: orderBy(this.state.fruits, "name", "asc"),
+            fruits: orderBy(this.state.fruits, "name", "desc"),
+         };
+      });
    }
 
    render() {
